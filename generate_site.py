@@ -202,6 +202,7 @@ def nav_html(current):
     links.append(("deep-cleaning.html", "Deep"))
     links.append(("move-out-cleaning.html", "Move-Out"))
     links.append(("apartment-cleaning.html", "Apartments"))
+    links.append(("blog.html", "Blog"))
     out = ['<nav>']
     for href, label in links:
         cls = ' class="current"' if href == current else ''
@@ -217,6 +218,7 @@ def footer_html():
     <a href="deep-cleaning.html">Deep Cleaning</a>
     <a href="move-out-cleaning.html">Move-Out Cleaning</a>
     <a href="apartment-cleaning.html">Apartment Cleaning</a>
+    <a href="blog.html">Blog</a>
   </div>
   <p><strong>House Cleaning Oklahoma City</strong> — Serving Oklahoma City since 2018</p>
   <p>📞 <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a> | {DOMAIN}</p>
@@ -455,12 +457,173 @@ function calc() {{
 </html>"""
 
 
+def article_page(art):
+    body = "\n".join(f"<section><h2>{h2}</h2>{html}</section>" for h2, html in art["body"])
+    faq = "".join(
+        f'<div class="faq"><h3>{q}</h3><p>{a}</p></div>' for q, a in art["faq"]
+    )
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{art['title']}</title>
+<meta name="description" content="{art['meta']}">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{{"@context":"https://schema.org","@type":"Article","headline":"{art['title']}","datePublished":"{art['date']}","author":{{"@type":"Organization","name":"House Cleaning Oklahoma City"}},"publisher":{{"@type":"Organization","name":"House Cleaning Oklahoma City"}},"mainEntityOfPage":"https://{DOMAIN}/{art['slug']}.html"}}
+</script>
+</head>
+<body>
+<div class="top">📞 Same-day cleaning available in OKC — <a href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a></div>
+{nav_html(art['slug'] + '.html')}
+
+<header>
+  <h1>{art['h1']}</h1>
+  <p>{art['sub']}</p>
+  <a class="btn" href="tel:{PHONE_TEL}">Get Your Free Estimate</a>
+</header>
+
+{body}
+
+<section>
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq">{faq}</div>
+</section>
+
+<section style="background:#eef4ff;padding:2rem;border-radius:12px;text-align:center;">
+  <h2>Ready for a Spotless Home?</h2>
+  <p>Call us today for a free estimate — no obligations, honest pricing.</p>
+  <a class="btn" href="tel:{PHONE_TEL}">📞 {PHONE_DISPLAY}</a>
+</section>
+
+{footer_html()}
+</body>
+</html>"""
+
+
+def blog_page():
+    cards = "\n".join(
+        f'<div class="card"><h3><a href="{a["slug"]}.html" style="color:inherit">{a["title"]}</a></h3><p>{a["meta"]}</p><p style="opacity:0.6">📅 {a["date"]}</p></div>'
+        for a in ARTICLES
+    )
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>House Cleaning Tips & Prices in Oklahoma City | Blog</title>
+<meta name="description" content="Useful guides: cleaning prices in Oklahoma City, deep cleaning checklists, move-out tips. Read before you book.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top">📞 Same-day cleaning available in OKC — <a href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a></div>
+{nav_html("blog.html")}
+
+<header>
+  <h1>House Cleaning Guides & Prices</h1>
+  <p>Honest answers about cleaning costs, checklists and tips for Oklahoma City homeowners.</p>
+</header>
+
+<section>
+  <div class="grid">
+    {cards}
+  </div>
+</section>
+
+{footer_html()}
+</body>
+</html>"""
+
+
+ARTICLES = [
+    {
+        "slug": "house-cleaning-cost-okc",
+        "title": "How Much Does House Cleaning Cost in Oklahoma City? (2026 Guide)",
+        "h1": "How Much Does House Cleaning Cost in Oklahoma City?",
+        "sub": "Real prices for standard, deep and move-out cleaning in OKC — updated for 2026.",
+        "meta": "House cleaning cost in Oklahoma City 2026: $120-330 per visit on average. See prices by home size, cleaning type and frequency.",
+        "date": "2026-08-04",
+        "body": [
+            ("Average House Cleaning Prices in Oklahoma City",
+             "<p>Most Oklahoma City homeowners pay <strong>$120-330 per visit</strong> for professional house cleaning. A typical 2-bedroom home costs <strong>$170-220</strong> for a standard clean, while a deep cleaning of the same home runs <strong>$280-380</strong>.</p><p>OKC prices run about 10-15% below the national average — you get the same quality of service for less than in Dallas or Denver.</p>"),
+            ("Prices by Home Size",
+             "<table><tr><td>Studio / 1-bedroom apartment</td><td>$80-160</td></tr><tr><td>2-bedroom home</td><td>$170-220</td></tr><tr><td>3-bedroom home</td><td>$220-330</td></tr><tr><td>4+ bedroom home</td><td>$330-450</td></tr><tr><td>Hourly rate</td><td>$45-75</td></tr></table><p><em>Prices are estimates. The final price depends on the scope of work — we assess each home and agree on the exact price before starting.</em></p>"),
+            ("Prices by Cleaning Type",
+             "<ul class='checks'><li>✔ <strong>Standard cleaning</strong> — $120-220: kitchen, bathrooms, floors, dusting. Weekly or bi-weekly visits get a 10-15% discount.</li><li>✔ <strong>Deep cleaning</strong> — $250-450: every corner, baseboards, inside appliances, detailed <a href='deep-cleaning.html'>deep clean</a>.</li><li>✔ <strong>Move-out cleaning</strong> — $300-500: landlord-ready <a href='move-out-cleaning.html'>move-out clean</a> to get your deposit back.</li><li>✔ <strong>Apartment cleaning</strong> — from $80 for studios, from $90 for 1-bedroom <a href='apartment-cleaning.html'>units</a>.</li></ul>"),
+            ("What Affects the Price",
+             "<h3>Home size and layout</h3><p>More bedrooms and bathrooms mean more time — and a higher price. Open-plan homes are cheaper to clean than homes with many small rooms.</p><h3>Condition of the home</h3><p>A home that hasn't been cleaned in months needs more work than one on a weekly schedule. That's why we always look at the actual scope of work before quoting.</p><h3>Frequency</h3><p>Weekly and bi-weekly clients save 10-15% — regular cleaning keeps the home from getting dirty in the first place.</p><h3>Pets</h3><p>Homes with pets need extra vacuuming and lint removal. It's a small surcharge, but we always agree on it upfront.</p>"),
+            ("Why Our Prices Are Fair",
+             "<p>We don't hide prices behind a booking form. You see our rates on this page, we discuss your home over the phone, and the final price is agreed <em>before</em> we start — no surprises at the end. If the scope changes, we tell you immediately and ask before doing extra work.</p>"),
+        ],
+        "faq": [
+            ("How often should I get my house cleaned?", "Most OKC families book weekly or bi-weekly. Monthly visits are fine for maintenance if the home is kept tidy in between."),
+            ("Do I need to be home during the cleaning?", "No. Many clients give us a key or garage code. We're insured and bonded."),
+            ("Are your prices really final?", "The price we agree on the phone or after the first visit is the price you pay — as long as the scope of work doesn't change."),
+        ],
+    },
+    {
+        "slug": "deep-cleaning-checklist",
+        "title": "Deep Cleaning Checklist: What's Included in a Professional Deep Clean",
+        "h1": "Deep Cleaning Checklist: What's Included",
+        "sub": "Room-by-room breakdown of a professional deep cleaning in Oklahoma City.",
+        "meta": "What does a professional deep cleaning include? Room-by-room checklist: kitchen, bathrooms, baseboards, inside appliances. OKC prices from $250.",
+        "date": "2026-08-04",
+        "body": [
+            ("Deep Cleaning vs Standard Cleaning",
+             "<p>A standard cleaning keeps an already-clean home tidy. A <a href='deep-cleaning.html'>deep cleaning</a> resets the home: every corner, every surface, everything you skip during a normal week. Most OKC homeowners do one deep clean every 6-12 months — and always before moving in or out.</p>"),
+            ("Kitchen",
+             "<ul class='checks'><li>✔ Inside and outside of appliances (oven, fridge, microwave)</li><li>✔ Cabinet fronts, handles and kickboards</li><li>✔ Countertops scrubbed and sanitized</li><li>✔ Sink descaled and polished</li><li>✔ Backsplash degreased</li></ul>"),
+            ("Bathrooms",
+             "<ul class='checks'><li>✔ Shower, tub and tiles scrubbed and descaled</li><li>✔ Toilets sanitized inside and out</li><li>✔ Vanity, mirror and fixtures polished</li><li>✔ Grout spot-cleaned</li><li>✔ Exhaust fan dusted</li></ul>"),
+            ("Living Areas and Bedrooms",
+             "<ul class='checks'><li>✔ Baseboards and door frames wiped</li><li>✔ Light switches and outlets cleaned</li><li>✔ Ceiling fans and light fixtures dusted</li><li>✔ Windowsills and window tracks</li><li>✔ Furniture dusted top to bottom</li><li>✔ Floors vacuumed, then mopped or hard-floored cleaned</li></ul>"),
+            ("How Much Does a Deep Clean Cost in OKC?",
+             "<p>Expect <strong>$250-450</strong> depending on home size. A 2-bedroom home averages <strong>$280-380</strong>. Add $50-100 if the home has heavy buildup or hasn't been cleaned in months. Prices are estimates — the final price depends on the scope of work.</p>"),
+        ],
+        "faq": [
+            ("How long does a deep cleaning take?", "A 2-bedroom home takes 3-5 hours with a team of two. Larger homes or heavy buildup can take longer."),
+            ("How often should I deep clean?", "Every 6-12 months, plus before moving in or out, after renovations, or when allergies act up."),
+            ("Should I be home?", "No — we work with keys and garage codes. You'll come home to a reset house."),
+        ],
+    },
+    {
+        "slug": "move-out-cleaning-checklist",
+        "title": "Move-Out Cleaning Checklist: Get Your Security Deposit Back",
+        "h1": "Move-Out Cleaning Checklist",
+        "sub": "What landlords check before returning your deposit — and how to pass every time.",
+        "meta": "Move-out cleaning checklist for OKC renters: kitchen, bathrooms, walls, floors. Professional move-out cleaning from $300. Get your deposit back.",
+        "date": "2026-08-04",
+        "body": [
+            ("Why Move-Out Cleaning Matters",
+             "<p>Most landlords walk the property with a checklist and photograph every room. A <a href='move-out-cleaning.html'>professional move-out clean</a> removes the biggest reasons deposits get withheld: grease, soap scum, dust on baseboards, and marks on walls.</p>"),
+            ("Kitchen — The #1 Inspection Point",
+             "<ul class='checks'><li>✔ Oven degreased inside and out, racks scrubbed</li><li>✔ Fridge emptied, defrosted and sanitized</li><li>✔ Microwave, dishwasher and range hood cleaned</li><li>✔ Cabinets wiped inside and out, shelves lined if needed</li><li>✔ Sink descaled, counters spotless</li><li>✔ Floors mopped behind appliances</li></ul>"),
+            ("Bathrooms",
+             "<ul class='checks'><li>✔ Toilet sanitized, no limescale</li><li>✔ Shower and tub scrubbed, glass doors streak-free</li><li>✔ Vanity, mirror and fixtures polished</li><li>✔ Grout and caulk spot-cleaned</li></ul>"),
+            ("Walls, Floors and Extras",
+             "<ul class='checks'><li>✔ Walls spot-cleaned (marks, scuffs, cobwebs)</li><li>✔ Baseboards wiped</li><li>✔ Windows cleaned inside</li><li>✔ Closets vacuumed and wiped</li><li>✔ Carpet vacuumed or steam-cleaned if required by lease</li><li>✔ Light fixtures and ceiling fans dusted</li></ul>"),
+            ("DIY or Hire a Pro?",
+             "<p>If you have the time, the DIY route works — but it takes a full day and landlords still find things you missed. A professional move-out clean in OKC costs <strong>$300-500</strong>, and it's usually cheaper than losing a $1,000+ deposit. Most of our clients book a move-out clean on moving day and hand the keys over the same afternoon.</p>"),
+        ],
+        "faq": [
+            ("When should I schedule the move-out clean?", "The day you move out, or the day before if the landlord hands the keys over to new tenants quickly."),
+            ("Will the cleaning guarantee my deposit?", "Nothing can guarantee it, but a professional clean covers every inspection point landlords check. We also clean behind appliances — the usual hidden culprit."),
+            ("Do you clean carpets?", "We can add carpet steam cleaning to the move-out service — ask when you book."),
+        ],
+    },
+]
+
+
 def main():
     files = {
         "index.html": index_page(),
+        "blog.html": blog_page(),
     }
     for s in SERVICES:
         files[f"{s['slug']}.html"] = service_page(s)
+    for a in ARTICLES:
+        files[f"{a['slug']}.html"] = article_page(a)
 
     for name, content in files.items():
         path = os.path.join(BASE, name)
