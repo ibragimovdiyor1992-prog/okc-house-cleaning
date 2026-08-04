@@ -5,7 +5,7 @@ import os
 BASE = os.path.dirname(os.path.abspath(__file__))
 PHONE_DISPLAY = "(405) 555-0100"
 PHONE_TEL = "+14055550100"
-DOMAIN = "okchousecleaning.com"
+DOMAIN = "ibragimovdiyor1992-prog.github.io/okc-house-cleaning"
 
 CITIES = [
     {
@@ -199,8 +199,6 @@ SERVICES = [
 
 def nav_html(current):
     links = [("index.html", "Home")]
-    for c in CITIES[:4]:
-        links.append((f"house-cleaning-{c['slug']}.html", c["name"]))
     links.append(("deep-cleaning.html", "Deep"))
     links.append(("move-out-cleaning.html", "Move-Out"))
     links.append(("apartment-cleaning.html", "Apartments"))
@@ -213,17 +211,14 @@ def nav_html(current):
 
 
 def footer_html():
-    city_links = "".join(
-        f'<a href="house-cleaning-{c["slug"]}.html">{c["name"]} Cleaning</a>' for c in CITIES
-    )
     return f"""<footer>
   <div class="links">
-    {city_links}
+    <a href="index.html">Home</a>
     <a href="deep-cleaning.html">Deep Cleaning</a>
     <a href="move-out-cleaning.html">Move-Out Cleaning</a>
     <a href="apartment-cleaning.html">Apartment Cleaning</a>
   </div>
-  <p><strong>House Cleaning Oklahoma City</strong> — Serving OKC Metro since 2018</p>
+  <p><strong>House Cleaning Oklahoma City</strong> — Serving Oklahoma City since 2018</p>
   <p>📞 <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a> | {DOMAIN}</p>
   <p style="opacity:0.7">Hours: Mon-Sat 8am-6pm · Licensed &amp; Insured</p>
 </footer>"""
@@ -345,25 +340,13 @@ def service_page(s):
   {faq}
 </section>
 
-<section>
-  <h2>Serving the Whole OKC Metro</h2>
-  <p>We clean homes across Oklahoma City and surrounding suburbs:</p>
-  <div class="areas">
-    {''.join(f'<a href="house-cleaning-{c["slug"]}.html" style="text-decoration:none"><span>{c["name"]}</span></a>' for c in CITIES)}
-  </div>
-</section>
-
 {footer_html()}
 </body>
 </html>"""
 
 
 def index_page():
-    city_cards = "".join(
-        f'<a href="house-cleaning-{c["slug"]}.html" style="text-decoration:none;color:inherit">'
-        f'<div class="card"><h3>🧹 {c["name"]}</h3><p>Standard from ${c["std"].split("-")[0].strip().replace("$","")} · Deep from ${c["deep"].split("-")[0].strip().replace("$","")}</p></div></a>'
-        for c in CITIES
-    )
+    services_cards = ""
     schema = schema_local()
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -433,21 +416,13 @@ def index_page():
 </section>
 
 <section>
-  <h2>Cleaning Services by City</h2>
-  <p>We serve the entire Oklahoma City metro — choose your city for local pricing and coverage:</p>
-  <div class="grid">
-    {city_cards}
-  </div>
-</section>
-
-<section>
   <h2>Why Oklahoma City Trusts Us</h2>
   <ul class="checks">
     <li>✔ Fully insured &amp; background-checked cleaners</li>
     <li>✔ Upfront pricing — no surprises</li>
     <li>✔ Same-day &amp; emergency cleaning available</li>
     <li>✔ Eco-friendly products on request</li>
-    <li>✔ Serving OKC, Edmond, Norman, Yukon, Moore and more</li>
+    <li>✔ Serving Oklahoma City and nearby neighborhoods</li>
   </ul>
 </section>
 
@@ -484,8 +459,6 @@ def main():
     files = {
         "index.html": index_page(),
     }
-    for c in CITIES:
-        files[f"house-cleaning-{c['slug']}.html"] = city_page(c)
     for s in SERVICES:
         files[f"{s['slug']}.html"] = service_page(s)
 
