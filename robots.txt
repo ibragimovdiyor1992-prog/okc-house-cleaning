@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://okchousecleaning.com/sitemap.xml
+Sitemap: https://ibragimovdiyor1992-prog.github.io/okc-house-cleaning/sitemap.xml
