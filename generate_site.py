@@ -277,6 +277,7 @@ def city_page(c):
     <li>Recurring weekly/bi-weekly: <strong>10-15% discount</strong></li>
   </ul>
   <p><em>{c['premium']}</em></p>
+  <p><strong>Note:</strong> Prices above are estimates. The final price depends on the scope of work — we assess each home and agree on the exact price before starting.</p>
 </section>
 
 <section>
@@ -336,7 +337,7 @@ def service_page(s):
 <section>
   <h2>Pricing</h2>
   <p><span class="price">{s['price']}</span></p>
-  <p>Exact quotes are confirmed by phone — call for your home's price.</p>
+  <p>This is an estimate. The final price depends on the scope of work — we'll assess your home and agree on the exact price before starting.</p>
 </section>
 
 <section>
@@ -405,6 +406,7 @@ def index_page():
     <tr><td>Hourly rate</td><td>$45-75</td></tr>
   </table>
   <p><em>OKC prices are 10-15% below the national average. Final quote depends on size and condition.</em></p>
+  <p><strong>Note:</strong> Prices shown are estimates. The final price depends on the scope of work — we assess each home and agree on the exact price before starting.</p>
 </section>
 
 <section>
@@ -426,7 +428,7 @@ def index_page():
     </select>
     <button class="btn" onclick="calc()" style="border:none;cursor:pointer;width:100%;">Calculate My Price</button>
     <div class="result" id="res"></div>
-    <p style="font-size:0.85em;color:#666;">Estimate only. Call for exact quote based on your home.</p>
+    <p style="font-size:0.85em;color:#666;">Estimate only — not a final price. The final price depends on the scope of work; we'll assess your home and agree on the exact price before starting.</p>
   </div>
 </section>
 
