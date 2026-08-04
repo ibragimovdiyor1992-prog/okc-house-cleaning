@@ -371,6 +371,10 @@ def index_page():
 </header>
 
 <section>
+  <p style="font-size:1.05rem">Professional <strong>maid service and house cleaning in Oklahoma City</strong> — affordable, insured and reliable. Standard, deep, move-out, apartment and <a href="same-day-cleaning-okc.html">same-day cleaning</a>. Trusted housekeeping for OKC families since 2018.</p>
+</section>
+
+<section>
   <h2>Our Cleaning Services in OKC</h2>
   <div class="grid">
     <div class="card"><h3>🧹 Standard Cleaning</h3><p>Kitchen, bathrooms, floors, dusting — weekly or bi-weekly maintenance.</p><div class="price">from $120</div></div>
@@ -610,6 +614,56 @@ ARTICLES = [
             ("When should I schedule the move-out clean?", "The day you move out, or the day before if the landlord hands the keys over to new tenants quickly."),
             ("Will the cleaning guarantee my deposit?", "Nothing can guarantee it, but a professional clean covers every inspection point landlords check. We also clean behind appliances — the usual hidden culprit."),
             ("Do you clean carpets?", "We can add carpet steam cleaning to the move-out service — ask when you book."),
+        ],
+    },
+    {
+        "slug": "maid-service-okc",
+        "title": "Maid Service in Oklahoma City: Prices and What's Included (2026)",
+        "h1": "Maid Service in Oklahoma City: What You Get",
+        "sub": "Maid service, housekeeping or house cleaning in OKC — what's the difference and what does it cost?",
+        "meta": "Maid service in Oklahoma City: prices from $120, what's included, and the difference between a maid, housekeeper and cleaning service in OKC.",
+        "date": "2026-08-04",
+        "body": [
+            ("Maid Service vs House Cleaning in OKC",
+             "<p>The words get used interchangeably, but there's a real difference. A <strong>maid or housekeeper</strong> is hired for regular, ongoing help — light cleaning, tidying, sometimes laundry and organization. A <strong>house cleaning service</strong> sends a team for a thorough, room-by-room clean of your home. In Oklahoma City, most families book a cleaning team for standard, deep or move-out cleaning — and it costs less per visit than a dedicated maid.</p>"),
+            ("How Much Does a Maid Service Cost in Oklahoma City?",
+             "<table><tr><td>1-bedroom apartment (bi-weekly)</td><td>$80-120 per visit</td></tr><tr><td>2-bedroom home (bi-weekly)</td><td>$140-200 per visit</td></tr><tr><td>3-bedroom home (weekly)</td><td>$180-260 per visit</td></tr><tr><td>Deep cleaning (one-time)</td><td>$250-450</td></tr><tr><td>Move-out cleaning (one-time)</td><td>$300-500</td></tr></table><p><em>Prices are estimates. The final price depends on the scope of work — we assess each home and agree on the exact price before starting.</em></p>"),
+            ("What's Included in Our Cleaning Visit",
+             "<ul class='checks'><li>✔ Kitchen: counters, sink, stove top, exterior of appliances</li><li>✔ Bathrooms: toilet, shower, tub, mirrors, fixtures</li><li>✔ Living areas: dusting, floors vacuumed and mopped</li><li>✔ Bedrooms: dusting, bed made, floors cleaned</li><li>✔ Trash removed, supplies included</li></ul><p>Add-ons like inside-the-oven, baseboards or window tracks are part of a <a href='deep-cleaning.html'>deep cleaning</a>.</p>"),
+            ("Weekly, Bi-Weekly or One-Time?",
+             "<p>Weekly and bi-weekly clients in OKC save 10-15% and their homes stay consistently clean. One-time visits work well for special occasions, spring cleaning or after a party. There are no contracts — you decide the schedule, and you can change it anytime.</p>"),
+            ("Why Homeowners Choose Us Over a Private Maid",
+             "<p>A private maid works alone; our insured, background-checked team arrives on time, works fast, and the price is agreed <em>before</em> we start. You don't need to manage supplies, schedules or payroll — just open the door (or give us a key) and come home to a clean house.</p>"),
+        ],
+        "faq": [
+            ("Do you bring your own supplies?", "Yes — all supplies and equipment are included. Eco-friendly options available on request."),
+            ("Can the same cleaner come every time?", "We do our best to keep the same team for recurring clients — consistency builds trust."),
+            ("Do I need to tip?", "Tipping is appreciated but never required. Most OKC clients tip 10-15% for great service."),
+        ],
+    },
+    {
+        "slug": "same-day-cleaning-okc",
+        "title": "Same-Day House Cleaning in Oklahoma City: How It Works",
+        "h1": "Same-Day House Cleaning in Oklahoma City",
+        "sub": "Need a clean home today? Same-day and emergency cleaning in OKC — how fast we can be there.",
+        "meta": "Same-day house cleaning in Oklahoma City: book by 10 AM for same-day service. Emergency cleaning, last-minute guests, move-out same-day. Call now.",
+        "date": "2026-08-04",
+        "body": [
+            ("Yes, Same-Day Cleaning Is Available in OKC",
+             "<p>Life happens: surprise guests, a sick week, a last-minute showing, or you simply couldn't get to it. Our Oklahoma City team keeps same-day slots open most days — <strong>book by 10 AM and we can usually clean the same day</strong>. Call <a href='tel:{PHONE_TEL}'>{PHONE_DISPLAY}</a> to check today's availability.</p>"),
+            ("When Do People Need Same-Day Cleaning?",
+             "<ul class='checks'><li>✔ <strong>Surprise guests</strong> — dinner tonight, clean house now</li><li>✔ <strong>Last-minute showing</strong> — landlords and realtors call us for rentals</li><li>✔ <strong>Move-out same day</strong> — keys due today, landlord inspecting</li><li>✔ <strong>Post-party reset</strong> — after a gathering, the house needs a full reset</li><li>✔ <strong>Emergency situations</strong> — pet accidents, spills, smells</li></ul>"),
+            ("How Fast Can We Be There?",
+             "<p>For standard cleaning: same day for most of Oklahoma City, usually within 2-4 hours of booking. For deep or move-out cleaning: same day if booked early, otherwise next morning. Call us and we'll give you a straight answer on timing — no empty promises.</p>"),
+            ("Same-Day Prices",
+             "<p>Same-day service doesn't mean a surcharge for us — you pay the same honest rates: <strong>standard from $120, deep from $250, move-out from $300</strong>. The final price depends on the scope of work, agreed before we start. See the full <a href='house-cleaning-cost-okc.html'>Oklahoma City price guide</a>.</p>"),
+            ("How to Book",
+             "<p>Fastest: call <a href='tel:{PHONE_TEL}'>{PHONE_DISPLAY}</a>. Tell us your home size, what you need, and your address — we confirm availability, price and time right away. Ready when you are.</p>"),
+        ],
+        "faq": [
+            ("Is same-day cleaning more expensive?", "No. Same-day service costs the same as a normal visit — we just fit you into today's schedule."),
+            ("Do you clean same-day on weekends?", "We work Monday-Saturday and keep same-day slots on Saturdays whenever the team is available."),
+            ("What if I need an emergency cleaning right now?", "Call us — if we can't make it today, we'll say so honestly and find the earliest slot."),
         ],
     },
 ]
