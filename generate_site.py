@@ -5,7 +5,7 @@ import os
 BASE = os.path.dirname(os.path.abspath(__file__))
 PHONE_DISPLAY = "(405) 555-0100"
 PHONE_TEL = "+14055550100"
-DOMAIN = "ibragimovdiyor1992-prog.github.io/okc-house-cleaning"
+DOMAIN = "okchomecleaning.com"
 
 CITIES = [
     {
