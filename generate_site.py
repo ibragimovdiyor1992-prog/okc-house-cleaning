@@ -7,6 +7,10 @@ PHONE_DISPLAY = "(405) 555-0100"
 PHONE_TEL = "+14055550100"
 DOMAIN = "okchomecleaning.com"
 
+# ⚠️ ПРАВИЛО ПРОЕКТА (директива Диёра, 04.08.2026):
+# 1 сайт = 1 город × 1 услуга. Этот сайт = House Cleaning × Oklahoma City ONLY.
+# Пригороды (Edmond, Norman, Moore, Yukon, Midwest City, Bethany, Choctaw) = ОТДЕЛЬНЫЕ сайты.
+# НИКОГДА не вызывать city_page() и не генерировать страницы пригородов здесь.
 CITIES = [
     {
         "slug": "edmond",
@@ -772,6 +776,8 @@ ARTICLES = [
 
 
 def main():
+    # ⚠️ НЕ добавлять city_page(c) сюда — это создаст страницы пригородов.
+    # Этот сайт: ТОЛЬКО Oklahoma City (индекс + услуги + статьи).
     files = {
         "index.html": index_page(),
         "blog.html": blog_page(),
