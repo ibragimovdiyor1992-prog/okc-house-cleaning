@@ -1,0 +1,7 @@
+# Secrets — никогда не коммитить
+.env
+.envrc
+*.token
+*.key
+*credentials*
+.git-credentials
