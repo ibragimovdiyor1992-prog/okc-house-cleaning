@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OKC House Cleaning — позиции в Google</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 700px; margin: auto; padding: 20px; }
+  .ok { color: green; } .wait { color: #888; } .pos { font-size: 1.2em; font-weight: bold; }
+  .top3 { background: #e6ffe6; } .top10 { background: #fffbe6; }
+  td, th { padding: 8px 12px; border-bottom: 1px solid #ddd; text-align: left; }
+  table { width: 100%; border-collapse: collapse; }
+  .updated { color: #666; font-size: 0.85em; margin-top: 30px; }
+</style>
+</head>
+<body>
+<h1>📈 Позиции okchomecleaning.com</h1>
+<p>Отслеживание позиций сайта в поиске Google по ключевым запросам.</p>
+<p>Обновляется автоматически раз в неделю.</p>
+
+<table id="ranks">
+  <tr><th>Запрос</th><th>Позиция</th><th>Статус</th></tr>
+  <tr><td>house cleaning Oklahoma City</td><td class="pos wait">—</td><td class="wait">⏳ ожидание</td></tr>
+  <tr><td>maid service Oklahoma City</td><td class="pos wait">—</td><td class="wait">⏳ ожидание</td></tr>
+  <tr><td>house cleaning cost Oklahoma City</td><td class="pos wait">—</td><td class="wait">⏳ ожидание</td></tr>
+  <tr><td>deep cleaning Oklahoma City</td><td class="pos wait">—</td><td class="wait">⏳ ожидание</td></tr>
+  <tr><td>move out cleaning Oklahoma City</td><td class="pos wait">—</td><td class="wait">⏳ ожидание</td></tr>
+</table>
+
+<p class="updated">Последнее обновление: загрузка...</p>
+
+<p><a href="https://okchomecleaning.com/">← На главную</a></p>
+<script>
+fetch('rankings.json').then(r=>r.json()).then(d=>{
+  const rows = document.querySelectorAll('#ranks tr:not(:first-child)');
+  rows.forEach((row,i)=>{
+    if(d.rankings && d.rankings[i]){
+      const pos = d.rankings[i].position;
+      const cell = row.querySelector('.pos');
+      const status = row.querySelector('.status');
+      cell.textContent = pos || '—';
+      if(pos && pos <= 3) { cell.className = 'pos ok'; row.className = 'top3'; status.textContent = '✅ топ-3'; }
+      else if(pos && pos <= 10) { row.className = 'top10'; status.textContent = '✅ топ-10'; }
+      else if(pos) { status.textContent = '📊 не в топ-10'; }
+    }
+  });
+  if(d.updated) document.querySelector('.updated').textContent = 'Последнее обновление: ' + d.updated;
+}).catch(()=>{});
+</script>
+</body>
+</html>
