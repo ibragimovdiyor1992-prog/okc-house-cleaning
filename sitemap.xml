@@ -1,57 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://okchomecleaning.com/</loc>
-  </url>
-  <url>
-    <loc>https://okchomecleaning.com/deep-cleaning.html</loc>
-  </url>
-  <url>
-    <loc>https://okchomecleaning.com/move-out-cleaning.html</loc>
-  </url>
-  <url>
-    <loc>https://okchomecleaning.com/apartment-cleaning.html</loc>
-  </url>
-  <url>
-    <loc>https://okchomecleaning.com/blog.html</loc>
-  </url>
-  <url>
-    <loc>https://okchomecleaning.com/house-cleaning-cost-okc.html</loc>
-  </url>
-  <url>
-    <loc>https://okchomecleaning.com/deep-cleaning-checklist.html</loc>
-  </url>
-  <url>
-    <loc>https://okchomecleaning.com/move-out-cleaning-checklist.html</loc>
-  </url>
-  <url>
-    <loc>https://okchomecleaning.com/maid-service-okc.html</loc>
-  </url>
-  <url>
-    <loc>https://okchomecleaning.com/same-day-cleaning-okc.html</loc>
-  </url>
-  <url>
-    <loc>https://okchomecleaning.com/how-often-to-clean.html</loc>
-  </url>
-  <url>
-    <loc>https://okchomecleaning.com/best-house-cleaning-okc.html</loc>
-  </url>
-  <url>
-    <loc>https://okchomecleaning.com/move-in-cleaning-okc.html</loc>
-  </url>
-  <url>
-    <loc>https://okchomecleaning.com/airbnb-cleaning-okc.html</loc>
-  </url>
-  <url>
-    <loc>https://okchomecleaning.com/cleaning-tips-okc.html</loc>
-  </url>
-  <url>
-    <loc>https://okchomecleaning.com/fall-cleaning-okc.html</loc>
-  </url>
-  <url>
-    <loc>https://okchomecleaning.com/pet-friendly-cleaning-okc.html</loc>
-  </url>
-  <url>
-    <loc>https://okchomecleaning.com/nw-okc-house-cleaning.html</loc>
-  </url>
+<url><loc>https://okchomecleaning.com/</loc><priority>1.0</priority></url>
+<url><loc>https://okchomecleaning.com/deep-cleaning.html</loc><priority>0.8</priority></url>
+<url><loc>https://okchomecleaning.com/move-out-cleaning.html</loc><priority>0.8</priority></url>
+<url><loc>https://okchomecleaning.com/apartment-cleaning.html</loc><priority>0.8</priority></url>
+<url><loc>https://okchomecleaning.com/maid-service-okc.html</loc><priority>0.8</priority></url>
+<url><loc>https://okchomecleaning.com/house-cleaning-cost-okc.html</loc><priority>0.7</priority></url>
+<url><loc>https://okchomecleaning.com/best-house-cleaning-okc.html</loc><priority>0.7</priority></url>
+<url><loc>https://okchomecleaning.com/same-day-cleaning-okc.html</loc><priority>0.7</priority></url>
+<url><loc>https://okchomecleaning.com/eco-friendly-cleaning-okc.html</loc><priority>0.7</priority></url>
+<url><loc>https://okchomecleaning.com/weekly-house-cleaning-okc.html</loc><priority>0.7</priority></url>
+<url><loc>https://okchomecleaning.com/affordable-house-cleaning-okc.html</loc><priority>0.7</priority></url>
+<url><loc>https://okchomecleaning.com/spring-cleaning-okc.html</loc><priority>0.7</priority></url>
+<url><loc>https://okchomecleaning.com/end-of-lease-cleaning-okc.html</loc><priority>0.7</priority></url>
+<url><loc>https://okchomecleaning.com/house-cleaning-services-near-me-okc.html</loc><priority>0.7</priority></url>
+<url><loc>https://okchomecleaning.com/one-time-deep-cleaning-okc.html</loc><priority>0.7</priority></url>
+<url><loc>https://okchomecleaning.com/senior-home-cleaning-okc.html</loc><priority>0.7</priority></url>
+<url><loc>https://okchomecleaning.com/new-home-cleaning-okc.html</loc><priority>0.7</priority></url>
+<url><loc>https://okchomecleaning.com/same-day-house-cleaning-okc.html</loc><priority>0.7</priority></url>
+<url><loc>https://okchomecleaning.com/deep-cleaning-checklist.html</loc><priority>0.6</priority></url>
+<url><loc>https://okchomecleaning.com/move-out-cleaning-checklist.html</loc><priority>0.6</priority></url>
+<url><loc>https://okchomecleaning.com/move-in-cleaning-okc.html</loc><priority>0.6</priority></url>
+<url><loc>https://okchomecleaning.com/airbnb-cleaning-okc.html</loc><priority>0.6</priority></url>
+<url><loc>https://okchomecleaning.com/pet-friendly-cleaning-okc.html</loc><priority>0.6</priority></url>
+<url><loc>https://okchomecleaning.com/cleaning-tips-okc.html</loc><priority>0.6</priority></url>
+<url><loc>https://okchomecleaning.com/how-often-to-clean.html</loc><priority>0.6</priority></url>
+<url><loc>https://okchomecleaning.com/fall-cleaning-okc.html</loc><priority>0.6</priority></url>
+<url><loc>https://okchomecleaning.com/nw-okc-house-cleaning.html</loc><priority>0.6</priority></url>
+<url><loc>https://okchomecleaning.com/blog.html</loc><priority>0.5</priority></url>
+<url><loc>https://okchomecleaning.com/rankings.html</loc><priority>0.3</priority></url>
 </urlset>
